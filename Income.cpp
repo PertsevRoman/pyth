@@ -40,7 +40,7 @@ int World::simplesCount(int n) {
     int *a = new int [n], i, j, k;
     memset(a, 0, sizeof(int) * n);
     for(i = 1; 3 * i + 1 < n; i++) {
-        for(j = 1; (k = i + j + 2 * i * j) < n && j <= i; j++){
+        for(j = 1; (k = i + j + 2 * i * j) < n && j <= i; j++) {
             a[k] = 1;
         }
     }

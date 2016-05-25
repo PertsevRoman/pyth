@@ -1,21 +1,27 @@
 from libbp import World
 
+import sys
+
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.uic import *
+
 class Test:
     def fn(self, x):
         print('one %s' % x)
 
 if __name__ == "__main__":
-    w = World("Income Software")
+    app = QApplication(sys.argv)
 
-    n = Test()
+    r = World('Income')
+    m = Test()
 
-    def r(x):
-        print('two %s' % x)
+    w = loadUi('/home/joker/temp/main.ui')
 
-    print(w.greet())
-    print(w.simplesCount(10))
+    w.start.released.connect(lambda: r.function(100, m.fn))
 
-    g = 100
-    w.function(g, n.fn)
-    w.function(g, r)
-    w.function(g, lambda x: print('three %s' % x))
+    w.setWindowTitle('Simple')
+    w.show()
+
+    sys.exit(app.exec_())
