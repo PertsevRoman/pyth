@@ -45,7 +45,7 @@ int World::simplesCount(int n) {
         }
     }
 
-    for(i = 1; 2 * i + 1 < n; i++){
+    for(i = 1; 2 * i + 1 < n; i++) {
         if(a[i] == 0) {
             ++res;
         }
@@ -56,6 +56,11 @@ int World::simplesCount(int n) {
     return res;
 }
 
-void World::function(boost::python::object &obj) {
-    boost::python::call<void>(obj.ptr());
+void World::function(int n, boost::python::object &obj) {
+    PyObject *oj = obj.ptr();
+    if(PyFunction_Check(oj) || PyMethod_Check(oj)) {
+        int res = simplesCount(n);
+
+        boost::python::call<void, int>(oj, res);
+    }
 }

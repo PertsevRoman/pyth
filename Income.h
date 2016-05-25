@@ -6,6 +6,8 @@
 #include <boost/python/list.hpp>
 #include <boost/python/call.hpp>
 
+#include <thread>
+
 #include <bitset>
 
 using namespace std;
@@ -15,9 +17,11 @@ struct World {
     string msg;
     World(string _msg);
     string greet();
+
     boost::python::list simples(int n);
     int simplesCount(int n);
-    void function(boost::python::object &obj);
+
+    void function(int n, boost::python::object &obj);
 };
 
 BOOST_PYTHON_MODULE(libbp)
