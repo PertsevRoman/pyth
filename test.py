@@ -5,7 +5,10 @@ class Test:
         print('inc')
 
 if __name__ == "__main__":
-    w = World("Income!")
+    w = World("Income Software")
+
+    n = Test()
 
     print(w.greet())
     print(w.simplesCount(10000))
+    w.function(n.fn)

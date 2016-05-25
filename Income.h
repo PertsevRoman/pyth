@@ -4,6 +4,7 @@
 #include <boost/python.hpp>
 #include <boost/scoped_ptr.hpp>
 #include <boost/python/list.hpp>
+#include <boost/python/call.hpp>
 
 #include <bitset>
 
@@ -16,6 +17,7 @@ struct World {
     string greet();
     boost::python::list simples(int n);
     int simplesCount(int n);
+    void function(boost::python::object &obj);
 };
 
 BOOST_PYTHON_MODULE(libbp)
@@ -24,5 +26,6 @@ BOOST_PYTHON_MODULE(libbp)
         .def("greet", &World::greet)
         .def("simples", &World::simples)
         .def("simplesCount", &World::simplesCount)
+        .def("function", &World::function)
     ;
 };

@@ -55,3 +55,7 @@ int World::simplesCount(int n) {
 
     return res;
 }
+
+void World::function(boost::python::object &obj) {
+    boost::python::call<void>(obj.ptr());
+}
