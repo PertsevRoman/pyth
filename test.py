@@ -8,4 +8,4 @@ if __name__ == "__main__":
     w = World("Income!")
 
     print(w.greet())
-    print(w.simplesCount(100))
+    print(w.simplesCount(10000))

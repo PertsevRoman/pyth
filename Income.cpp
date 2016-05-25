@@ -16,12 +16,13 @@ boost::python::list World::simples(int n) {
 
     int *a = new int [n], i, j, k;
     memset(a, 0, sizeof(int) * n);
-    for(i = 1; 3*i+1 < n; i++) {
+    for(i = 1; 3 * i + 1 < n; i++) {
         for(j = 1; (k = i + j + 2 * i * j) < n && j <= i; j++){
             a[k] = 1;
         }
     }
 
+    res.append(2);
     for(i = 1; 2 * i + 1 < n; i++){
         if(a[i] == 0) {
             res.append(2 * i + 1);
@@ -34,11 +35,11 @@ boost::python::list World::simples(int n) {
 }
 
 int World::simplesCount(int n) {
-    int res = 0;
+    int res = 1;
 
     int *a = new int [n], i, j, k;
     memset(a, 0, sizeof(int) * n);
-    for(i = 1; 3*i+1 < n; i++) {
+    for(i = 1; 3 * i + 1 < n; i++) {
         for(j = 1; (k = i + j + 2 * i * j) < n && j <= i; j++){
             a[k] = 1;
         }
