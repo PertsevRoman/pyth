@@ -61,6 +61,8 @@ void World::function(int n, boost::python::object &obj) {
     if(PyFunction_Check(oj) || PyMethod_Check(oj)) {
         int res = simplesCount(n);
 
+        std::cout << maxofthree(-1, 24, 8) << std::endl;
+
         boost::python::call<void, int>(oj, res);
     }
 }

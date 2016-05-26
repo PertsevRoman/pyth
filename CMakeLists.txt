@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
-project(bp)
+project(bp CXX ASM ASM-ATT)
 
-enable_language(CXX)
+#enable_language(CXX)
+#enable_language(ASM-ATT)
 
 set(CMAKE_BUILD_TYPE Debug)
 
@@ -13,7 +14,8 @@ include_directories(${PY_INCLUDE_DIR})
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-set(SOURCE_FILES Income.h Income.cpp)
+set(SOURCE_FILES Income.h Income.cpp mxt.s)
+
 add_library(bp SHARED ${SOURCE_FILES})
 
 target_link_libraries(bp -lpython3.4m -lboost_python-py34)

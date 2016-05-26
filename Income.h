@@ -6,12 +6,13 @@
 #include <boost/python/list.hpp>
 #include <boost/python/call.hpp>
 
-#include <thread>
-
-#include <bitset>
-
 using namespace std;
 using namespace boost::python;
+
+extern "C"
+{
+    inline int64_t maxofthree(int64_t, int64_t, int64_t);
+}
 
 struct World {
     string msg;
