@@ -1,6 +1,7 @@
         .globl  maxofthree
         .globl  adding
         .globl  multy
+        .globl  mulvec
 
         .text
 
@@ -21,5 +22,11 @@ adding:
 multy:
         mov     %rdi, %rax
         mul     %rsi
-        #cmovl   %rdx, %rax
+        cmovl   %rdx, %rax
         ret
+
+mulvec:
+        movups (%edi), %xmm0
+        movups (%esi), %xmm1
+        mulps %xmm1, %xmm0
+        movups %xmm0, (%edi)

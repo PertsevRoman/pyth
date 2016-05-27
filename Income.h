@@ -14,6 +14,7 @@ extern "C"
     inline int64_t maxofthree(int64_t, int64_t, int64_t);
     inline int64_t adding(int64_t, int64_t);
     inline int64_t multy(int64_t, int64_t);
+    inline void mulvec(float *a, float *b);
 }
 
 struct World {

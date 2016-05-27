@@ -61,9 +61,26 @@ void World::function(int n, boost::python::object &obj) {
     if(PyFunction_Check(oj) || PyMethod_Check(oj)) {
         int res = simplesCount(n);
 
+        float *a = new float[4];
+        float *b = new float[4];
+        for(int i = 0; i < 4; ++i) {
+            a[i] = 9;
+            b[i] = 4;
+        }
+
+        mulvec(a, b);
+        for(int i = 0; i < 4; ++i) {
+            std::cout << a[i] << std::endl;
+        }
+
+
+        std::cout << "endl" << std::endl;
         std::cout << adding(-1, 11) << std::endl;
         std::cout << multy(2, 11) << std::endl;
         std::cout << maxofthree(-1, 11, 18) << std::endl;
+
+        delete [] a;
+        delete [] b;
 
         boost::python::call<void, int>(oj, res);
     }

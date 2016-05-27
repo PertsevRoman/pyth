@@ -15,4 +15,5 @@ set(SOURCE_FILES Income.h Income.cpp mxt.s)
 
 add_library(bp SHARED ${SOURCE_FILES})
 
+#set_target_properties(bp PROPERTIES COMPILE_FLAGS "-save-temps")
 target_link_libraries(bp -lpython3.4m -lboost_python-py34)
