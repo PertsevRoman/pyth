@@ -1,8 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(bp CXX ASM ASM-ATT)
-
-#enable_language(CXX)
-#enable_language(ASM-ATT)
+project(bp CXX ASM-ATT)
 
 set(CMAKE_BUILD_TYPE Debug)
 
